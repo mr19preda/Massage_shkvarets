@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HarmonyTouch | Массаж и мануальная терапия</title>
+  <style>
+    :root {
+      --primary: #2a6f5c;   /* Спокойный изумрудный */
+      --secondary: #f5f0e6; /* Бежевый фон */
+      --accent: #d4a76a;    /* Золотой акцент */
+      --text: #333;
+      --light: #fff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { line-height: 1.6; color: var(--text); background-color: var(--secondary); }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    /* Хедер */
+    header { background: var(--light); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+    .header-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+    .logo { font-size: 24px; font-weight: 700; color: var(--primary); }
+    .logo span { color: var(--accent); }
+    .contacts { display: flex; align-items: center; gap: 20px; }
+    .phone { font-weight: 700; color: var(--primary); text-decoration: none; font-size: 18px; }
+    .btn { background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+    .btn:hover { background: #1e5547; transform: translateY(-2px); }
+    .btn-accent { background: var(--accent); }
+    .btn-accent:hover { background: #c1955a; }
+    /* Герой */
+    .hero { background: linear-gradient(rgba(42, 111, 92, 0.85), rgba(42, 111, 92, 0.9)), url('https://via.placeholder.com/1920x800/e0d6c9/2a6f5c?text=Спокойствие+и+Здоровье') no-repeat center center/cover; color: white; text-align: center; padding: 180px 20px 100px; }
+    .hero h1 { font-size: 48px; margin-bottom: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    .hero p { font-size: 24px; max-width: 700px; margin: 0 auto 30px; }
+    /* Блоки */
+    section { padding: 80px 0; }
+    .section-title { text-align: center; font-size: 36px; margin-bottom: 50px; color: var(--primary); position: relative; }
+    .section-title:after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--accent); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; }
+    .service-card { background: white; border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s; }
+    .service-card:hover { transform: translateY(-10px); }
+    .service-card h3 { color: var(--primary); margin: 15px 0; }
+    .price { font-weight: 700; font-size: 22px; color: var(--accent); margin-top: 10px; }
+    /* CTA */
+    .cta { background: var(--primary); color: white; text-align: center; }
+    .cta h2 { font-size: 36px; margin-bottom: 20px; }
+    .form-container { max-width: 500px; margin: 30px auto 0; background: white; padding: 30px; border-radius: 15px; }
+    .form-group { margin-bottom: 20px; text-align: left; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text); }
+    .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+    /* Футер */
+    footer { background: #222; color: #aaa; text-align: center; padding: 30px 0; font-size: 14px; }
+    @media (max-width: 768px) {
+      .header-container { flex-direction: column; gap: 15px; }
+      .hero h1 { font-size: 36px; }
+      .hero p { font-size: 20px; }
+      .section-title { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Хедер -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">Harmony<span>Touch</span></div>
+      <div class="contacts">
+        <a href="tel:+79991234567" class="phone">+7 (999) 123-45-67</a>
+        <a href="#form" class="btn">Записаться</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Герой -->
+  <section class="hero">
+    <div class="container">
+      <h1>Снимите боль. Верните лёгкость тела</h1>
+      <p>Профессиональный массаж и мануальная терапия без боли и стресса. Индивидуальный подход под вашу ситуацию.</p>
+      <a href="#form" class="btn btn-accent">Записаться на бесплатную консультацию</a>
+    </div>
+  </section>
+
+  <!-- Услуги -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Наши услуги</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div style="font-size: 48px; margin-bottom: 15px;">💆‍♂️</div>
+          <h3>Классический массаж</h3>
+          <p>Расслабление, снятие напряжения, улучшение кровообращения</p>
+          <div class="price">от 2 000 ₽</div>
+        </div>
+        <div class="service-card">
+          <div style="font-size: 48px; margin-bottom: 15px;">🦴</div>
+          <h3>Мануальная терапия</h3>
+          <p>Коррекция осанки, снятие боли в суставах и позвоночнике</p>
+          <div class="price">от 3 500 ₽</div>
+        </div>
+        <div class="service-card">
+          <div style="font-size: 48px; margin-bottom: 15px;">🧘</div>
+          <h3>Антистресс-программа</h3>
+          <p>Глубокая релаксация + ароматерапия для восстановления сил</p>
+          <div class="price">2 800 ₽</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA с формой -->
+  <section class="cta" id="form">
+    <div class="container">
+      <h2>Запишитесь на сеанс сегодня</h2>
+      <p style="max-width: 600px; margin: 0 auto 25px; opacity: 0.9;">Оставьте заявку — перезвоним в течение 15 минут и подберём удобное время</p>
+      <div class="form-container">
+        <form>
+          <div class="form-group">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" placeholder="Анна" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Интересующая услуга</label>
+            <select id="service" required>
+              <option value="">Выберите...</option>
+              <option>Классический массаж</option>
+              <option>Мануальная терапия</option>
+              <option>Антистресс-программа</option>
+              <option>Консультация специалиста</option>
+            </select>
+          </div>
+          <button type="submit" class="btn" style="width:100%; padding:15px; font-size:18px;">Записаться</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer>
+    <div class="container">
+      <p>© 2026 HarmonyTouch. Массаж и мануальная терапия. Все права защищены.</p>
+      <p style="margin-top: 8px; font-size: 13px; color: #888;">ИП Иванов А.С. | Лицензия № ЛМ-123456 | Политика конфиденциальности</p>
+    </div>
+  </footer>
+
+  <script>
+    // Простая валидация формы (для примера)
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Спасибо за заявку! Специалист перезвонит вам в ближайшее время.');
+      this.reset();
+    });
+    
+    // Плавная прокрутка к якорям
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
